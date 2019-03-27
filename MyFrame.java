@@ -2,6 +2,7 @@ import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+
 public class MyFrame extends JFrame implements KeyListener{
 
 	Draw drawing;
@@ -32,7 +33,7 @@ public class MyFrame extends JFrame implements KeyListener{
 		}
 
 		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
-			drawing.jump();
+			//drawing.jump();
 			System.out.println("jump");
 		}
 	
@@ -46,6 +47,8 @@ public class MyFrame extends JFrame implements KeyListener{
 
 	}
 
+
+
 	public static void main(String args[]){
 		MyFrame gameFrame = new MyFrame();
 		gameFrame.setSize(1280,640);
@@ -54,7 +57,11 @@ public class MyFrame extends JFrame implements KeyListener{
 
 		gameFrame.getContentPane().add(gameFrame.drawing);
 		gameFrame.addKeyListener(gameFrame);
-		System.out.println("practical programming");
-	}
-}
+		System.out.println("JavaGame");
 
+		String filepath = "bgmusic.wav";
+		Sound musicObject = new Sound();
+		musicObject.playBack(filepath);
+		
+	}
+} 

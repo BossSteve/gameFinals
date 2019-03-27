@@ -106,7 +106,7 @@ public class Draw extends JComponent{
 		}
 	}
 
-	public void attackAnimation(){
+	public void jumpAnimation(){
 		Thread thread1 = new Thread(new Runnable(){
 			public void run(){
 				for(int ctr = 0; ctr < 7; ctr++){
@@ -136,7 +136,7 @@ public class Draw extends JComponent{
 	}
 
 	public void jump(){
-		attackAnimation();
+		jumpAnimation();
 	}
 
 	public void moveUp(){

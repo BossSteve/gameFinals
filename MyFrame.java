@@ -24,17 +24,13 @@ public class MyFrame extends JFrame implements KeyListener{
 		}
 
 		else if(e.getKeyCode() == KeyEvent.VK_S){
-			//drawing.();
+			drawing.hurt();
+			System.out.println("jump");
 		}
 
 		else if(e.getKeyCode() == KeyEvent.VK_A){
 			drawing.moveLeft();
 			System.out.println("pos:" + drawing.x + ", " + drawing.y);
-		}
-
-		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
-			drawing.hurt();
-			System.out.println("jump");
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
 			drawing.moveRight2();
@@ -44,6 +40,16 @@ public class MyFrame extends JFrame implements KeyListener{
 			drawing.moveleft2();
 			System.out.println("pos:" + drawing.a + ", " + drawing.b);
 		}
+		else if(e.getKeyCode() == KeyEvent.VK_UP){
+			drawing.fall();
+			System.out.println("Player 2 fall");
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+			drawing.slide();
+			System.out.println("Player 2 slides");
+		}
+	
+
 	
 	}
 

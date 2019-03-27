@@ -255,11 +255,72 @@ public class Draw extends JComponent{
 		thread2.start();
 	}
 
+	public void fallAnimation(){
+		Thread thread3 = new Thread(new Runnable(){
+			public void run(){
+				for(int ctr = 0; ctr < 7; ctr++){
+					try {
+						if(ctr==6){
+							resource2 = getClass().getResource("walk0.png");
+						}
+						else{
+							resource2 = getClass().getResource("fall"+ctr+".png");
+						}
+						try{
+							image2 = ImageIO.read(resource2);
+						}
+						catch(IOException e){
+							e.printStackTrace();
+						}
+				        repaint();
+				        Thread.sleep(100);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		thread3.start();
+	}
+
+	public void slideAnimation(){
+		Thread thread4 = new Thread(new Runnable(){
+			public void run(){
+				for(int ctr = 0; ctr < 9; ctr++){
+					try {
+						if(ctr==8){
+							resource2 = getClass().getResource("walk0.png");
+						}
+						else{
+							resource2 = getClass().getResource("slide"+ctr+".png");
+						}
+						try{
+							image2 = ImageIO.read(resource2);
+						}
+						catch(IOException e){
+							e.printStackTrace();
+						}
+				        repaint();
+				        Thread.sleep(100);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		thread4.start();
+	}
 	public void jump(){
 		jumpAnimation();
 	}
 	public void hurt(){
 		hurtAnimation();
+	}
+	public void fall(){
+		fallAnimation();
+	}
+	public void slide(){
+		slideAnimation();
 	}
 
 	public void moveUp(){

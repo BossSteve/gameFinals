@@ -5,7 +5,7 @@ import javax.sound.sampled.Clip;
 
 public class Sound{
 	
-	void playBack(String musicLocation)
+	  void playBack(String musicLocation)
 	{
 		try
 		{

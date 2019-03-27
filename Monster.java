@@ -5,11 +5,11 @@ import java.net.URL;
 
 public class Monster{
 	
-	public int xPos = 150;
-	public int yPos = 300;
+	public int xPos = 50;
+	public int yPos = 5;
 
 	public BufferedImage image;
-	public URL resource = getClass().getResource("slime/idle0.png");
+	public URL resource = getClass().getResource("tree.png");
 
 	public Monster(){
 		try{

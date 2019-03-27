@@ -13,28 +13,36 @@ public class MyFrame extends JFrame implements KeyListener{
 
 	public void keyPressed(KeyEvent e){
 
-		if(e.getKeyCode() == KeyEvent.VK_UP){
+		if(e.getKeyCode() == KeyEvent.VK_W){
 			drawing.jump();
 			System.out.println("jump");
 		}
 
-		else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+		else if(e.getKeyCode() == KeyEvent.VK_D){
 			drawing.moveRight();
 			System.out.println("pos: " + drawing.x + ", " + drawing.y);
 		}
 
-		else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+		else if(e.getKeyCode() == KeyEvent.VK_S){
 			//drawing.();
 		}
 
-		else if(e.getKeyCode() == KeyEvent.VK_LEFT){
+		else if(e.getKeyCode() == KeyEvent.VK_A){
 			drawing.moveLeft();
 			System.out.println("pos:" + drawing.x + ", " + drawing.y);
 		}
 
 		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
-			//drawing.jump();
+			drawing.hurt();
 			System.out.println("jump");
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+			drawing.moveRight2();
+			System.out.println("pos" + drawing.a + ", " + drawing.b);
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_LEFT){
+			drawing.moveleft2();
+			System.out.println("pos:" + drawing.a + ", " + drawing.b);
 		}
 	
 	}
@@ -46,8 +54,6 @@ public class MyFrame extends JFrame implements KeyListener{
 	public void keyReleased(KeyEvent event){
 
 	}
-
-
 
 	public static void main(String args[]){
 		MyFrame gameFrame = new MyFrame();
@@ -62,6 +68,6 @@ public class MyFrame extends JFrame implements KeyListener{
 		String filepath = "bgmusic.wav";
 		Sound musicObject = new Sound();
 		musicObject.playBack(filepath);
-		
+
 	}
 } 
